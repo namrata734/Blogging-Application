@@ -1,0 +1,23 @@
+.header{
+    margin-top: 20px;
+}
+.headerTitles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: poppins;
+    color:grey;
+    font-weight: bold;
+}
+.headerTitleSm{
+    font-size: medium;
+    margin: 10px;
+}
+.headerTitleLg{
+    font-size:30px;
+    margin: 10px;
+}
+.headerImg{
+    height: 400px;
+    width: 100%;
+}
