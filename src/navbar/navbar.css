@@ -53,3 +53,9 @@ a {
   color: #666;
   cursor: pointer;
 }
+
+.topList {
+  display: flex;
+  flex-direction: row;
+  color: aliceblue;
+}

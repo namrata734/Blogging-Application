@@ -2,19 +2,12 @@ import React from "react";
 import Posts from "../../posts/posts";
 import "./post.css";
 
-const Post = () => {
+const Post = ({ posts }) => {
   return (
     <div className="post">
-      <Posts />
-      <Posts />
-      <Posts />
-      <Posts />
-      <Posts />
-      <Posts />
-      <Posts />
-      <Posts />
-      <Posts />
-      <Posts />
+      {posts.map((e) => (
+        <Posts post={e} />
+      ))}
     </div>
   );
 };

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./navbar.css";
+import { Context } from "../context/context";
 
 const Navbar = () => {
-  const user = true;
+  const { user, dispatch } = useContext(Context);
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
+
   return (
     <>
       <div className="navbar">
@@ -25,7 +31,11 @@ const Navbar = () => {
           <a href="/write">
             <div className="centernav">WRITE</div>
           </a>
-          {user && <li className="centernav">LOGOUT</li>}
+          {user && (
+            <li className="centernav" onClick={handleLogout}>
+              LOGOUT
+            </li>
+          )}
         </div>
         <div className="right">
           {user ? (
@@ -38,12 +48,16 @@ const Navbar = () => {
             </a>
           ) : (
             <ul className="topList">
-              <li className="topListItem">
-                <a href="/login">LOGIN</a>
-              </li>
-              <li className="topListItem">
-                <a href="/register">Signup</a>
-              </li>
+              <div>
+                <a className="centernav" href="/login">
+                  LOGIN
+                </a>
+              </div>
+              <div>
+                <a className="centernav" href="/register">
+                  SIGNUP
+                </a>
+              </div>
             </ul>
           )}
         </div>
